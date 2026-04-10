@@ -16,7 +16,7 @@ export async function GET({ url, cookies }) {
             grant_type: "authorization_code",
             client_id: PATREON_CLIENT_ID,
             client_secret: PATREON_CLIENT_SECRET,
-            redirect_uri: "http://localhost:5173/patreon/link/callback"
+            redirect_uri: "https://xblazegmd.vercel.app/patreon/link/callback"
         })
     });
 
