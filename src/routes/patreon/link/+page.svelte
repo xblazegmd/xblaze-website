@@ -34,6 +34,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Link Patreon Account</title>
+</svelte:head>
+
 <BlueBG>
     <Corners />
     {#if form?.success}
