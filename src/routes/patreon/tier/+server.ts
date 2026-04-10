@@ -68,9 +68,8 @@ export async function GET({ url }) {
     } else if (tierTitle === "Amazing Beautiful Crab Tier™") {
         console.log("Amazing Beautiful Crab Tier");
         return json({ tier: 2 });
+    } else {
+        console.error("THIS SHOULD BE UNREACHABLE!!!!");
+        throw httpError(500, "Could not match user's tier (THIS SHOULD BE UNREACHABLE)");
     }
-
-    console.error("THIS SHOULD BE UNREACHABLE!!!!");
-
-    return json({ tier: 0 });
 }
