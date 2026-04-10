@@ -26,6 +26,8 @@ export async function GET({ url }) {
     });
 
     if (!req.ok) {
+        const message = await req.json();
+        console.error(message.toString());
         throw httpError(500, `${req.status}`)
     }
 
