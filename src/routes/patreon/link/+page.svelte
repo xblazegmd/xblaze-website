@@ -55,11 +55,11 @@
             <form method="POST" class="login-form">
                 <label class="login-form-item">
                     Username:
-                    <input name="username" type="text" class="gd-input" required />
+                    <input name="username" type="text" class="gd-input" autocomplete="off" required />
                 </label>
                 <label class="login-form-item">
                     Password
-                    <input name="password" type="password" class="gd-input" required />
+                    <input name="password" type="password" class="gd-input" autocomplete="off" required />
                 </label>
 
                 {#if form?.error}
