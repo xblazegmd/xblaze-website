@@ -30,7 +30,9 @@
     }
 
     function cancel() {
-        goto(resolve("/patreon/link/cancel"), {});
+        if (confirm("Are you sure you wanna cancel the login?")) {
+            goto(resolve("/patreon/link/cancel"), {});
+        }
     }
 </script>
 
