@@ -34,20 +34,17 @@
     }
 </script>
 
-{#if form?.success}
-    <!-- Linked Patreon and GD -->
-    <BlueBG>
-        <Corners />
+<BlueBG>
+    <Corners />
+    {#if form?.success}
+        <!-- Linked Patreon and GD -->
         <BrownBox width=60 height=35>
             <h2>All done!</h2>
             <p>Now open up <span class="cj">Geometry Dash</span>, load your profile, and your <span class="cy">badge</span> should be there!</p>
             <p>Make sure <span class="cg">"Xblaze's Geode API"</span> is installed</p>
         </BrownBox>
-    </BlueBG>
-{:else if data?.linkedPatreon}
-    <!-- Linked Patreon, log into GD -->
-    <BlueBG>
-        <Corners />
+    {:else if data?.linkedPatreon}
+        <!-- Linked Patreon, log into GD -->
         <BrownBox width=100 height=60>
             <h2 class="log-in-label">Log In</h2>
 
@@ -76,11 +73,8 @@
                 </div>
             </form>
         </BrownBox>
-    </BlueBG>
-{:else}
-    <!-- Link Patreon -->
-    <BlueBG>
-        <Corners />
+    {:else}
+        <!-- Link Patreon -->
         <BrownBox width=70 height=50>
             <h2>Thank you for supporting me!</h2>
             <div class="desc-container">
@@ -90,8 +84,8 @@
 
             <button onclick={patreonOAuth}>Link Patreon</button>
         </BrownBox>
-    </BlueBG>
-{/if}
+    {/if}
+</BlueBG>
 
 <style>
     .login-form {
