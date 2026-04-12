@@ -9,22 +9,19 @@ export async function GET({ url }) {
         throw httpError(400, "Missing parameter: 'accountID'");
     }
 
-    console.log(`Account ID: ${accountID}`);
-
     console.log("Fetching Patreon access token from database...");
 
     const { data, error } = await supabase
         .from("members")
-        .select("patreon_access_token")
-        .eq("account_id", Number(accountID))
-        .maybeSingle();
+        .select()
+        .eq("account_id", Number(accountID));
 
     if (error) {
         console.error(`Could not fetch info from database: ${error.message}`);
         throw httpError(500, `Could not fetch info from database: ${error.message}`);
     }
 
-    if (!data) {
+    if (!data[0].patreon_access_token) {
         console.error(`Couldn't find accountID '${accountID}' in database`);
         throw httpError(404, `Couldn't find accountID '${accountID}' in database`);
     }
@@ -37,7 +34,7 @@ export async function GET({ url }) {
     );
 
     const req = await fetch(reqUrl.href, {
-        headers: { "Authorization": `Bearer ${data.patreon_access_token}` }
+        headers: { "Authorization": `Bearer ${data[0].patreon_access_token}` }
     });
 
     if (!req.ok) {
