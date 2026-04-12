@@ -30,7 +30,10 @@
         "sike",
         "*insert caption here*",
         "I can do all things through Christ who strengthens me",
-        "Made in Colombia™"
+        "Made in Colombia™",
+        "SevChipz confirmed??????",
+        "Hatsune Mintku ftw",
+        "Sevconae Teto"
     ];
 
     let caption = possibleCaptions[Math.floor(Math.random() * possibleCaptions.length)];
