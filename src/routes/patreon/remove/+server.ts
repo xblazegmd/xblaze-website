@@ -18,7 +18,7 @@ export async function DELETE({ url, request }) {
 
     console.log("Validating auth token...");
 
-    const reqUrl = new URL("https://argon.globed.dev/v1");
+    const reqUrl = new URL("https://argon.globed.dev/v1/validation/check");
     reqUrl.searchParams.append("account_id", accountID);
     reqUrl.searchParams.append("authtoken", token);
 
