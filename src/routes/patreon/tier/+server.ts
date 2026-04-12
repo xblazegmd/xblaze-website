@@ -21,7 +21,7 @@ export async function GET({ url }) {
         throw httpError(500, `Could not fetch info from database: ${error.message}`);
     }
 
-    if (!data) {
+    if (!data[0].patreon_access_token) {
         console.error(`Couldn't find accountID '${accountID}' in database`);
         throw httpError(404, `Couldn't find accountID '${accountID}' in database`);
     }
