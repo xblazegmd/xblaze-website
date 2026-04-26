@@ -37,6 +37,10 @@
     let caption = possibleCaptions[Math.floor(Math.random() * possibleCaptions.length)];
 </script>
 
+<svelte:head>
+    <title>{page.status} {page.error?.message}</title>
+</svelte:head>
+
 <BlueBG>
     <Corners />
     <BrownBox width=50 height=33>

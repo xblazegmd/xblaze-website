@@ -37,6 +37,9 @@
     }
 </script>
 
+<svelte:head>
+    <title>Get This Poor Crab a PC 🥺</title>
+</svelte:head>
 
 <BlueBG>
     <Popup width=69 height=40 bind:flag={showPopup}>
