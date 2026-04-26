@@ -11,6 +11,7 @@
 <!-- ty colon for the css styling I may or may not have gotten off gd browser with inspect element -->
 <style>
     .brown-box {
+        position: relative;
         border-width: 2.5vh;
         border-style: solid;
         border-radius: 3vh;
